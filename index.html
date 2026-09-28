@@ -23,16 +23,20 @@
                   Xi Shi
                 </p>
                 <p>
-		I'm a Ph.D. student in Computer Science at the <a href="https://www.ucf.edu/">University of Central Florida</a>, advised by <a href="https://www.qlou.org/">Prof. Qian Lou</a>.
-		I received my M.S. in Computer Science from <a href="https://www.tamu.edu/">Texas A&M University</a> (advised by <a href="https://people.engr.tamu.edu/huangrh/index.html">Prof. Ruihong Huang</a>) and my B.Sc. from <a href="https://www.jlu.edu.cn/">Jilin University</a>.
+		I'm a second-year Ph.D. student in Computer Science at the <a href="https://www.ucf.edu/">University of Central Florida</a>, advised by <a href="https://www.qlou.org/">Prof. Qian Lou</a>.
+		I received my M.S. in Computer Science from <a href="https://www.tamu.edu/">Texas A&amp;M University</a> (advised by <a href="https://people.engr.tamu.edu/huangrh/index.html">Prof. Ruihong Huang</a>) and my B.Sc. from <a href="https://www.jlu.edu.cn/">Jilin University</a>.
                 </p>
                 <p>
-		My research interests include <strong>multi-agent LLM systems</strong>, <strong>agent orchestration and routing</strong>, <strong>parallel execution and latency optimization</strong>, <strong>tool-augmented reasoning</strong>, and <strong>efficient agent system design</strong>.
+		My research focuses on <strong>multi-agent LLM systems</strong>: how to orchestrate, route, and serve LLM agents so that they are <strong>fast</strong>, <strong>reliable</strong>, and <strong>safe</strong>.
+		I also work on <strong>LLM post-training</strong> (on-policy distillation) and <strong>efficient LLM inference</strong> (KV-cache reuse).
+                </p>
+                <p>
+		<strong>I am looking for research internships for Summer 2027.</strong>
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:xi320101@ucf.edu">Email</a> &nbsp;/&nbsp;
                   <a href="data/CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID">Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=sscq3ZwAAAAJ">Scholar</a> &nbsp;/&nbsp;
                   <a href="https://www.linkedin.com/in/xi-shi-153779289/">LinkedIn</a> &nbsp;/&nbsp;
                   <a href="https://github.com/xishi404">Github</a>
                 </p>
@@ -53,29 +57,74 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-            <!-- Publication 1: LAMaS -->
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div style="width:100%;height:100px;background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
-                  <span style="color:white;font-weight:bold;font-size:14px;">LAMaS</span>
+                  <span style="color:white;font-weight:bold;font-size:14px;text-align:center;padding:5px;">LAMaS</span>
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <span class="papertitle">Learning Latency-Aware Orchestration for Parallel Multi-Agent Systems</span>
+                <span class="papertitle">Learning Latency-Aware Orchestration for Multi-Agent Systems</span>
                 <br>
                 <strong>Xi Shi</strong>,
                 Mengxin Zheng,
                 <a href="https://www.qlou.org/">Qian Lou</a>
                 <br>
-                <em>Under Review at ARR</em>, 2026
+                <em>NeurIPS 2026</em> (Main Track)
+                <br>
+                <a href="https://arxiv.org/abs/2601.10560">arXiv</a> &nbsp;/&nbsp;
+                <a href="https://github.com/xishi404/LAMaS">Code</a>
                 <p></p>
                 <p>
-                Proposed LAMaS, a framework enabling layer-wise parallel execution for multi-agent systems to reduce inference latency. Designed a critical-path-aware credit assignment mechanism within the reward function to explicitly optimize the longest execution chain in DAG-based topologies. Achieved <strong>38-46% reduction</strong> in critical path length compared to SOTA (MaAS) on GSM8K, HumanEval, and MATH, while maintaining competitive task performance.
+                A latency-aware orchestration framework for multi-agent LLM systems. LAMaS learns execution graphs via constrained optimization with critical-path-aware credit assignment, plus a lightweight runtime controller that prunes redundant agent calls, cutting <strong>end-to-end latency by over 50%</strong> on four benchmarks at competitive or better accuracy.
                 </p>
               </td>
             </tr>
 
-            <!-- Publication 2: Deception Detection -->
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div style="width:100%;height:100px;background:linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <span style="color:white;font-weight:bold;font-size:13px;text-align:center;padding:5px;">KVShare<br>Arena</span>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">KVShareArena: KV-Cache Reuse Across Contexts and Model Checkpoints</span>
+                <br>
+                <strong>Xi Shi</strong>,
+                Mengxin Zheng,
+                <a href="https://www.qlou.org/">Qian Lou</a>
+                <br>
+                <em>Under review at ICLR 2027</em>
+                <br>
+                <a href="https://arxiv.org/abs/2609.10266">arXiv</a> &nbsp;/&nbsp;
+                <a href="https://github.com/xishi404/KVShareArena">Code</a>
+                <p></p>
+                <p>
+                An open benchmark for reusing KV caches when the preceding context or the model checkpoint changes (RAG, multi-agent pipelines). It compares 11 repair and compression methods under one protocol across 5 dense and MoE LLMs, showing that repairs cut <strong>time-to-first-token by 81&ndash;94%</strong> and that trained adapters degrade across checkpoints unless retrained.
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div style="width:100%;height:100px;background:linear-gradient(135deg, #fa709a 0%, #fee140 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <span style="color:white;font-weight:bold;font-size:13px;text-align:center;padding:5px;">Safe<br>Routing</span>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">Learning to Route Safely in Multi-Agent LLM Systems</span>
+                <br>
+                <strong>Xi Shi</strong>,
+                <a href="https://www.qlou.org/">Qian Lou</a>
+                <br>
+                <em>Under review</em>, 2026
+                <p></p>
+                <p>
+                A constrained reinforcement learning framework whose adaptive Lagrangian router jointly selects collaboration topology, agent roles, and LLM assignments, improving jailbreak resistance and robustness to malicious agents under an explicit clean-accuracy floor.
+                </p>
+              </td>
+            </tr>
+
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div style="width:100%;height:100px;background:linear-gradient(135deg, #f093fb 0%, #f5576c 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
@@ -83,7 +132,7 @@
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <span class="papertitle">Hidden in Plain Sight: Evaluation of the Deception Detection Capabilities of LLMs</span>
+                <span class="papertitle">Hidden in Plain Sight: Evaluation of the Deception Detection Capabilities of LLMs in Multimodal Settings</span>
                 <br>
                 Md Messal Monem Miah,
                 Adrita Anika,
@@ -91,18 +140,19 @@
                 <a href="https://people.engr.tamu.edu/huangrh/index.html">Ruihong Huang</a>
                 <br>
                 <em>ACL 2025</em> (Main Conference)
+                <br>
+                <a href="https://aclanthology.org/2025.acl-long.1497/">Paper</a>
                 <p></p>
                 <p>
-                Conducted large-scale zero-shot and few-shot evaluations of LLMs and large multimodal models (LMMs) on deception detection benchmarks (RLTD, MU3D).
+                Large-scale zero-shot and few-shot evaluations of LLMs and large multimodal models on deception detection benchmarks (RLTD, MU3D).
                 </p>
               </td>
             </tr>
 
-            <!-- Publication 3: LegalCore -->
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <div style="width:100%;height:100px;background:linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
-                  <span style="color:white;font-weight:bold;font-size:14px;">LegalCore</span>
+                  <span style="color:white;font-weight:bold;font-size:14px;text-align:center;padding:5px;">LegalCore</span>
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
@@ -113,11 +163,33 @@
                 Jonathan Tong,
                 et al.
                 <br>
-                <em>ACL 2025</em> (Findings)
+                <em>Findings of ACL 2025</em>
+                <br>
+                <a href="https://aclanthology.org/2025.findings-acl.1284/">Paper</a>
                 <p></p>
                 <p>
-                Built reproducible experiment pipelines and benchmarked LLMs vs. supervised models on long-context legal documents.
+                A dataset for event coreference in long legal documents, with benchmarks of LLMs and supervised models.
                 </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div style="width:100%;height:100px;background:linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <span style="color:white;font-weight:bold;font-size:12px;text-align:center;padding:5px;">Sarcasm<br>Detection</span>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <span class="papertitle">A Prior Probability of Speaker Information and Emojis Embedding Approach to Sarcasm Detection</span>
+                <br>
+                Yin Wang,
+                Xuyang Xu,
+                Ziteng Gao,
+                <strong>Xi Shi</strong>
+                <br>
+                <em>IEEE TALE 2021</em>
+                <br>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9678900">Paper</a>
               </td>
             </tr>
 
@@ -132,6 +204,26 @@
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+            <tr>
+              <td style="padding:16px;width:20%;vertical-align:middle;text-align:center">
+                <div style="width:100%;height:80px;background:linear-gradient(135deg, #000000 0%, #b8952d 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
+                  <span style="color:white;font-weight:bold;font-size:12px;text-align:center;">UCF</span>
+                </div>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <strong>University of Central Florida</strong>
+                <br>
+                Graduate Research Assistant, advised by Prof. Qian Lou
+                <br>
+                <em>Sep 2025 - Present</em>
+                <p></p>
+                <p>
+                Multi-agent LLM systems (latency-aware orchestration, safe routing), KV-cache reuse for LLM inference, and LLM post-training.
+                </p>
+              </td>
+            </tr>
+
             <tr>
               <td style="padding:16px;width:20%;vertical-align:middle;text-align:center">
                 <div style="width:100%;height:80px;background:linear-gradient(135deg, #500000 0%, #8b0000 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;">
@@ -139,26 +231,34 @@
                 </div>
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <strong>Jailbreak Resistance in LLMs/VLMs</strong>
+                <strong>Texas A&amp;M University &mdash; NLP Lab</strong>
                 <br>
-                Texas A&M University — NLP Lab
+                Graduate Student Researcher, advised by Prof. Ruihong Huang
                 <br>
-                <em>May 2024 - Aug 2024</em>
+                <em>Feb 2024 - May 2025</em>
                 <p></p>
                 <p>
-                Studied robustness and adversarial behaviors of LLMs/VLMs under jailbreak settings.
+                Evaluated LLMs and multimodal models on deception detection (ACL 2025) and legal event coreference (LegalCore); studied jailbreak robustness of LLMs and VLMs.
                 </p>
               </td>
             </tr>
           </tbody></table>
 
-          <!-- Skills Section -->
+          <!-- Service & Skills Section -->
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
+                <h2>Service</h2>
+                <p>
+                Reviewer, ACL Rolling Review (ARR), 2026
+                </p>
                 <h2>Skills</h2>
                 <p>
-                <strong>Programming:</strong> Python, PyTorch, C/C++, Bash, HTML/CSS, LaTeX
+                <strong>ML:</strong> PyTorch, Hugging Face Transformers, slime (Megatron-LM + SGLang); on-policy distillation, GRPO, SFT, constrained RL
+                <br>
+                <strong>LLM Serving:</strong> vLLM, SGLang, FlashAttention; KV-cache reuse and inference profiling
+                <br>
+                <strong>Languages &amp; Tools:</strong> Python, C/C++, Bash, SQL; Git, Linux, Slurm on HPC clusters, LaTeX
                 </p>
               </td>
             </tr>
