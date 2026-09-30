@@ -147,7 +147,8 @@
 
   cat.addEventListener('click', event => {
     event.stopPropagation();
-    walkTo(x + facing * 100, y - 12);
+    const direction = x + size / 2 > window.innerWidth / 2 ? -1 : 1;
+    walkTo(x + direction * 100, y - 12);
   });
 
   document.addEventListener('click', event => {
